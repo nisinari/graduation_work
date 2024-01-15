@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+.wrapper{
+    max-width: 1120px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: #fbd3d3;
+}
+.header_content{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+.index_subtitle{
+    text-align: center;
+    margin: 40px auto;
+    font-size: 32px;
+    font-weight: bold;
+}
+.ulflex{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.index_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.index_flex li{
+    width: 18%;
+    text-align: center;
+}
+
+.index_news{
+    display: flex;
+    flex-wrap: wrap;
+}
+.index_news li{
+    width: 32%;
+    padding: 10px;
+}
+.search_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.search_flex li{
+    width: 32%;
+    padding: 10px;
+}
+
+.login{
+    background-color: #fbd3d3;
+    margin: 60px auto;
+    text-align: center;
+    border-radius: 10px;
+}
+.login h2{
+    font-size: 32px;
+    padding: 40px 0 20px 0;
+}
+.login_input{
+    width: 60%;
+    margin: 40px auto;
+}
+.login_input p{
+    text-align: left;
+    font-weight: bold;
+}
+.login_input input{
+    width: 100%;
+    line-height: 2.5;
+    border-radius: 5px;
+}
+.login_button{
+    padding: 60px;
+}
+.login_button button{
+    font-size: 32px;
+    color: #fff;
+    border: #000 2px;
+    background-color: #d32e18;
+    padding: 16px 80px;
+    border-radius: 40px;
+}
+.entry_title{
+    margin: 40px auto;
+    font-size: 32px;
+    border-bottom: #000 solid 2px;
+}
+.entry_form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.entry_form dt{
+    display: inline;
+    width: 30%;
+    border-bottom: #000 dotted 1px;
+    padding: 10px;
+    align-items: center;
+}
+.entry_form dd{
+    width: 70%;
+    border-bottom: #000 dotted 1px;
+    padding: 10px;
+}
+.entry_required{
+    background-color: #d32e18;
+    color: #fff;
+    margin-left: 4px;
+    padding: 1px;
+    border-radius: 4px;
+}
+.entry_input{
+    width: 100%;
+    line-height: 2;
+}
+.entry_button{
+    text-align: center;
+    font-size: 32px;
+    margin: 40px auto;
+}
+.entry_button button{
+    color: #fff;
+    border: #000 2px;
+    background-color: #d32e18;
+    padding: 8px 60px;
+    border-radius: 40px;
+}
+
+.sarvice_title{
+    text-align: center;
+    font-size: 32px;
+}
+.service_explanaton{
+    font-size: 24px;
+}
+
+.service_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.service_list li{
+    width: 32%;
+    padding: 10px;
+}
+.service_flex{
+    display: flex;
+    justify-content: space-around;
+}
+.account_image{
+    width: 100%;
+}
+.account_flex{
+    display: flex;
+    justify-content: space-around;
+}
+.account_icon{
+    width: 50px;
+    border-radius: 50%;
+}
+.account_subtitle{
+    font-size: 24px;
+    text-align: center;
+}
+.post_list{
+    margin: 80px auto;
+}
+.post_detail{
+    text-align: center;
+    margin: 40px auto;
+}
+.offer_button{
+    text-align: center;
+    font-size: 32px;
+    margin: 40px auto;
+}
+.offer_button a{
+    color: #fff;
+    border: #000 2px;
+    background-color: #383737;
+    padding: 8px 60px;
+    border-radius: 40px;
+}
+
+.post_finish{
+    text-align: center;
+    font-size: 24px;
+    margin: 80px auto;
+}
+.finish_button{
+    text-align: center;
+}
+.finish_button a{
+    color: #fff;
+    border: #000 2px;
+    background-color: #d32e18;
+    padding: 8px 60px;
+    border-radius: 40px;
+}
+.first{
+    width: 100%;
+}

@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}サービス一覧{% endblock %}
+
+{% block active_service_list %}active{% endblock %}
+
+{% block head %}
+<link href="{% static 'css/clean-blog.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block contents %}
+<section class="wrapper first">
+    <img src="{% static 'assets/view.jpg' %}" alt="#">
+</section>
+<div class="wrapper">
+    <div class="">
+        <a class="">
+            <div class="">
+                {% if is_business_account %}
+                <a class="" href="{% url 'portal:service_create' %}">新規作成</a>
+                {% endif %}
+            </div>
+            <!-- 検索form -->
+            <div>
+                <form action="" method="get">
+                    <input name="query" value="{{ request.GET.query }}" type="text" />
+                    <button type="submit">検索する</button>
+                </form>
+            </div>
+            <h1>カテゴリ</h1>
+            <div>
+                <ul class="index_flex">
+                    <li><a href="{% url 'portal:search_result' 0%}">モノ</a></li>
+                    <li><a href=#>空間</a></li>
+                    <li><a href=#>スキル</a></li>
+                    <li><a href=#>移動</a></li>
+                </ul>
+            </div>
+            <hr class="my-4">
+
+            <div>
+                {% if 'query' in request.get_full_path  %}
+                <h1>検索結果</h1>
+                {% else %}
+                <h1>新着サービス</h1>
+                {% endif %}
+            </div>
+            {% for service in service_list %}
+            <div class="index_news">
+                <a href="{% url 'portal:service_detail' service.pk %}">
+                    {% if service.thumbnail %}
+                    <img src="{{ service.thumbnail.url }}" width="200" height="200"/>
+                    {% else %}
+                    <img src="{% static 'assets/img/no-image.jpg' %}" alt="#">
+                    {% endif %}
+                    <h2 class="post-title">
+                        {{ service.name }}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{ service.company }}
+                    </h3>
+                    <h3 class="post-subtitle">
+                        {{ service.overview|truncatechars:20 }}
+                    </h3>
+                    <h3 class="post-subtitle">
+                        {% for key, val in category_dict.items %}
+                        {%if key == service.category %}
+                        {{val}}
+                        {% endif %}
+                        {% endfor %}
+                    </h3>
+                </a>
+            </div>
+            <hr class="my-4">
+            {% empty %}
+            <p>サービスがありません。</p>
+            {% endfor %}
+
+            <!-- ページネーション処理 -->
+            {% if is_paginated %}
+            <ul class="pagination">
+                <!-- 前ページへのリンク -->
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                <!-- ページ数表示 -->
+                {% for page_num in page_obj.paginator.page_range %}
+                {% if page_obj.number == page_num %}
+                <li class="page-item active"><a class="page-link" href="#">{{ page_num }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                <!-- 次ページへのリンク -->
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+pip install -r requirements.txt
+
+django-allauthで、CustomUserを使って複数種類のユーザを管理する
+https://qiita.com/jansnap/items/5293c2b76f03378d800a
+
+Djangoの1ページ内に複数のモデルフォームを使用して表示・保存する方法
+https://ryougodesign.com/blog/django-easy-multiple-form/
