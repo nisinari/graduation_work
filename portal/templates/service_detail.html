@@ -20,6 +20,8 @@
                 <h1>{{ service_name }}</h1>
                 {% if service_image %}
                 <img src="{{ service_image.url }}" width="200" height="200"/>
+                {% else %}
+                <img src="{% static 'assets/img/no-image.jpg' %}" alt="#">
                 {% endif %}
                 <h2>{{ service_overview }}</h2>
             </div>

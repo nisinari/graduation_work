@@ -11,9 +11,10 @@
 
 {% block contents %}
 <section class="wrapper first">
-    <img src="{% static 'assets/view.jpg' %}" alt="#">
+    <img src="{% static 'assets/img/view.jpg' %}" alt="#">
 </section>
-<div class="wrapper">
+<section class="wrapper">
+    <h2 class="index_subtitle">検索</h2>
     <div class="">
         <a class="">
             <div class="">
@@ -21,23 +22,47 @@
                 <a class="" href="{% url 'portal:service_create' %}">新規作成</a>
                 {% endif %}
             </div>
-            <!-- 検索form -->
-            <div>
-                <form action="" method="get">
-                    <input name="query" value="{{ request.GET.query }}" type="text" />
-                    <button type="submit">検索する</button>
-                </form>
-            </div>
             <h1>カテゴリ</h1>
             <div>
                 <ul class="index_flex">
-                    <li><a href="{% url 'portal:search_result' 0%}">モノ</a></li>
-                    <li><a href=#>空間</a></li>
-                    <li><a href=#>スキル</a></li>
-                    <li><a href=#>移動</a></li>
+                    <li>
+                        <a href="{% url 'portal:search_result' 0%}">
+                            <img src="{% static 'assets\img\ロボットアイコン1.jpeg' %}" alt="#">
+                            <p>モノ</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=#>
+                            <img src="{% static 'assets\img\家の無料アイコン.jpeg' %}" alt="#">
+                            <p>空間</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=#>
+                            <img src="{% static 'assets\img\配達アイコン.jpeg' %}" alt="#">
+                            <p>配達</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=#>
+                            <img src="{% static 'assets\img\skill_icon.jpeg' %}" alt="#">
+                            <p>スキル</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=#>
+                            <img src="{% static 'assets\img\目的地アイコン4.jpeg' %}" alt="#">
+                            <p>移動</p>
+                        </a>
+                    </li>
                 </ul>
+                <div>
+                    <form action="" method="get">
+                        <input name="query" value="{{ request.GET.query }}" type="text" />
+                        <button type="submit">検索する</button>
+                    </form>
+                </div>
             </div>
-            <hr class="my-4">
 
             <div>
                 {% if 'query' in request.get_full_path  %}
@@ -46,34 +71,35 @@
                 <h1>新着サービス</h1>
                 {% endif %}
             </div>
-            {% for service in service_list %}
-            <div class="index_news">
-                <a href="{% url 'portal:service_detail' service.pk %}">
-                    {% if service.thumbnail %}
-                    <img src="{{ service.thumbnail.url }}" width="200" height="200"/>
-                    {% else %}
-                    <img src="{% static 'assets/img/no-image.jpg' %}" alt="#">
-                    {% endif %}
-                    <h2 class="post-title">
-                        {{ service.name }}
-                    </h2>
-                    <h3 class="post-subtitle">
-                        {{ service.company }}
-                    </h3>
-                    <h3 class="post-subtitle">
-                        {{ service.overview|truncatechars:20 }}
-                    </h3>
-                    <h3 class="post-subtitle">
-                        {% for key, val in category_dict.items %}
-                        {%if key == service.category %}
-                        {{val}}
+            <ul class="index_news">
+                {% for service in service_list %}
+                <li>     
+                    <a href="{% url 'portal:service_detail' service.pk %}">
+                        {% if service.thumbnail %}
+                        <img src="{{ service.thumbnail.url }}">
+                        {% else %}
+                        <img src="{% static 'assets/img/no-image.jpg' %}" alt="#">
                         {% endif %}
-                        {% endfor %}
-                    </h3>
-                </a>
-            </div>
-            <hr class="my-4">
-            {% empty %}
+                        <h2>
+                            {{ service.name }}
+                        </h2>
+                        <h3>
+                            {{ service.company }}
+                        </h3>
+                        <h3 >
+                            {{ service.overview|truncatechars:20 }}
+                        </h3>
+                        <h3>
+                            {% for key, val in category_dict.items %}
+                            {%if key == service.category %}
+                            {{val}}
+                            {% endif %}
+                            {% endfor %}
+                        </h3>
+                    </a>
+                </li>
+                {% empty %}
+            </ul>
             <p>サービスがありません。</p>
             {% endfor %}
 

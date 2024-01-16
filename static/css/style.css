@@ -40,14 +40,24 @@
     width: 18%;
     text-align: center;
 }
+.index_flex li a img{
+    width: 80%;
+    height:120px;
+    opacity: 1;
+}
+
 
 .index_news{
     display: flex;
     flex-wrap: wrap;
 }
 .index_news li{
+    text-align: center;
     width: 32%;
     padding: 10px;
+    margin: 10px;
+    border: 1px solid #383737;
+    border-radius: 4px;
 }
 .search_flex{
     display: flex;
