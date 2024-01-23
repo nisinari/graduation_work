@@ -19,11 +19,40 @@
     font-size: 40px;
     font-weight: bold;
 }
+footer{
+    height: 80px;
+    margin-top: 80px;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    background-color: #fbd3d3;
+}
+
+.first{
+    padding-bottom: 80px;
+    background-color: #fbd3d3;
+}
+.first first_flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first first_text{
+    width: 40%;
+    font-size: 40px;
+}
+.first img{
+    width: 60%;
+}
+
 .index_subtitle{
     text-align: center;
     margin: 40px auto;
     font-size: 32px;
     font-weight: bold;
+}
+.index_search{
+    text-align: right;
 }
 .ulflex{
     display: flex;
@@ -53,11 +82,19 @@
 }
 .index_news li{
     text-align: center;
-    width: 32%;
+    width: 31%;
     padding: 10px;
     margin: 10px;
     border: 1px solid #383737;
+    /* box-shadow: 10px 10px 15px -10px; */
     border-radius: 4px;
+}
+.index_news li img{
+    height: 200px;
+}
+.index_news li p{
+    text-align: center;
+    margin-bottom: 8px;
 }
 .search_flex{
     display: flex;
@@ -155,19 +192,59 @@
 .service_explanaton{
     font-size: 24px;
 }
-
-.service_list{
-    display: flex;
-    flex-wrap: wrap;
+.service_detail{
+    margin: 80px;
 }
-.service_list li{
-    width: 32%;
-    padding: 10px;
-}
-.service_flex{
+.service_detail .service_main{
     display: flex;
     justify-content: space-around;
 }
+.service_detail img{
+    width: 40%;
+    height: 300px;
+    padding-top: 80px;
+}
+.service_detail .service_content{
+    width: 60%;
+    padding: 80px 40px;
+}
+.service_detail .service_content .title{
+    font-size: 40px;
+    border-bottom: dotted black;
+    margin-bottom: 40px;
+}
+.service_detail .service_content .detail{
+    margin-bottom: 40px;
+}
+.service_detail form{
+    text-align: right;
+    margin-bottom: 60px;
+}
+.service_detail .service_post_list{
+    display: flex;
+    justify-content: space-between;
+}
+.service_detail .service_post_list li{
+    width: 31%;
+    padding: 10px 20px;
+    border: 1px solid #383737;
+    /* box-shadow: 10px 10px 15px -10px; */
+}
+.service_detail .service_post_list li p{
+    margin-bottom: 10px;
+}
+.service_detail .service_post_list .service_post_list_title{
+    font-size: 24px;
+}
+.service_detail .service_post_list .service_post_list_price{
+    text-align: center;
+}
+.service_detail .service_post_list .service_post_list_date{
+    text-align: right;
+}
+
+.service_detail {}
+.service_detail{}
 .account_image{
     width: 100%;
 }
@@ -183,13 +260,7 @@
     font-size: 24px;
     text-align: center;
 }
-.post_list{
-    margin: 80px auto;
-}
-.post_detail{
-    text-align: center;
-    margin: 40px auto;
-}
+
 .offer_button{
     text-align: center;
     font-size: 32px;
@@ -198,10 +269,37 @@
 .offer_button a{
     color: #fff;
     border: #000 2px;
-    background-color: #383737;
+    background-color: #d32e18;
     padding: 8px 60px;
     border-radius: 40px;
 }
+
+.post_detail .post_title{
+    font-size: 48px;
+    border-bottom: dotted black;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.post_detail .post_text{
+    margin-bottom: 40px;
+}
+.post_detail .post_price{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: dotted black;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.post_detail .post_date{
+    display: flex;
+    justify-content: flex-end;
+}
+.post_detail .post_date p{
+    margin-left: 10px;
+}
+.post_detail{}
+.post_detail{}
+.post_detail{}
 
 .post_finish{
     text-align: center;
@@ -218,6 +316,11 @@
     padding: 8px 60px;
     border-radius: 40px;
 }
-.first{
-    width: 100%;
+.button_flex{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
 }
+
+
+

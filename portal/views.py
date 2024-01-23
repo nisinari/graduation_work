@@ -169,3 +169,6 @@ class PostDeleteView(LoginRequiredMixin, generic.DeleteView):
         messages.success(self.request, "サービスを削除しました。")
         # ここに'media'を削除する処理を書く
         return super().delete(request, *args, **kwargs)
+    
+class Post_FinishView(generic.TemplateView):
+    template_name = "post_finish.html"

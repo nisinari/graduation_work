@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block contents %}
+  <section class="wrapper">
+    <p class="post_finish">申し込みが完了しました<br>少々お待ちください</p>
+    <div class="finish_button">
+      <a href="{% url 'portal:index' %}">Topに戻る</a>
+    </div>
+    </section>
+{% endblock %}

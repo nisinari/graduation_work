@@ -7,58 +7,45 @@
 
 
 {% block contents %}
-<div class="container my-div-style">
-    <div class="row">
-        <div class="col-3">
-            <strong>タイトル</strong>
-        </div>
-        <div class="col-9">
+<section class="wrapper post_detail"> 
+    <div>
+        <p class="post_title">
             {{ object.title }}
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col-3">
-            <strong>内容</strong>
-        </div>
-        <div class="col-9">
+        </p>
+        <p class="post_text">
             {{ object.body|linebreaksbr }}
+        </p>
+        <div class="post_price">
+            <p>価格:</p>
+            <p>
+                ￥{{ object.price }}
+            </p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-3">
-            <strong>価格</strong>
-        </div>
-        <div class="col-9">
-            {{ object.price }}
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-3">
-            <strong>作成日時</strong>
-        </div>
-        <div class="col-9">
+    <div class="post_date">
+        <p>作成日時:</p>
+        <p>
             {{ object.created_at }}
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col-3">
-            <strong>更新日時</strong>
-        </div>
-        <div class="col-9">
+        </p>
+        <p>更新日時:</p>
+        <p>
             {{ object.updated_at }}
-        </div>
+        </p>
     </div>
     {% if is_self_post %}
-    <a class="btn btn-success mt-5 mb-3" href="{% url 'portal:post_update' object.pk %}">編集</a>
-    <a class="btn btn-danger mt-5 ml-2 mb-3" href="{% url 'portal:post_delete' object.pk %}">削除</a>
+    <div class="button_flex">
+        <div class="offer_button">
+            <a href="{% url 'portal:post_update' object.pk %}">編集</a>
+        </div>
+        <div class="offer_button">
+            <a href="{% url 'portal:post_delete' object.pk %}">削除</a>
+        </div>
+    </div>
+    {% else %} 
+    <div class="offer_button">
+        <a href="{% url 'portal:post_finish' %}">申し込む</a>
+    </div>
     {% endif %}
-</div>
+</section>
 {% endblock %}

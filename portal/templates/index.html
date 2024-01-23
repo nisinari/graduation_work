@@ -10,19 +10,25 @@
 {% endblock %}
 
 {% block contents %}
-<section class="wrapper first">
-    <img src="{% static 'assets/img/view.jpg' %}" alt="#">
+<section>
+    <div class="first">
+        <div class="wrapper first_flex">
+            <div class="first_text">
+                <p>スキルのやり取りができます</p>
+            </div>
+            <img src="{% static 'assets/img/view.jpg' %}" alt="#">
+        </div>
+    </div>
 </section>
 <section class="wrapper">
-    <h2 class="index_subtitle">検索</h2>
     <div class="">
-        <a class="">
-            <div class="">
+        <div>
+            <div>
                 {% if is_business_account %}
                 <a class="" href="{% url 'portal:service_create' %}">新規作成</a>
                 {% endif %}
             </div>
-            <h1>カテゴリ</h1>
+            <h2 class="index_subtitle">カテゴリ</h2>
             <div>
                 <ul class="index_flex">
                     <li>
@@ -56,7 +62,8 @@
                         </a>
                     </li>
                 </ul>
-                <div>
+                <h2 class="index_subtitle">検索</h2>
+                <div class="index_search">
                     <form action="" method="get">
                         <input name="query" value="{{ request.GET.query }}" type="text" />
                         <button type="submit">検索する</button>
@@ -66,9 +73,9 @@
 
             <div>
                 {% if 'query' in request.get_full_path  %}
-                <h1>検索結果</h1>
+                <h2 class="index_subtitle">検索結果</h2>
                 {% else %}
-                <h1>新着サービス</h1>
+                <h2 class="index_subtitle">新着サービス</h2>
                 {% endif %}
             </div>
             <ul class="index_news">
@@ -80,22 +87,22 @@
                         {% else %}
                         <img src="{% static 'assets/img/no-image.jpg' %}" alt="#">
                         {% endif %}
-                        <h2>
+                        <p>
                             {{ service.name }}
-                        </h2>
-                        <h3>
+                        </p>
+                        <p>
                             {{ service.company }}
-                        </h3>
-                        <h3 >
+                        </p>
+                        <p>
                             {{ service.overview|truncatechars:20 }}
-                        </h3>
-                        <h3>
+                        </p>
+                        <p>
                             {% for key, val in category_dict.items %}
                             {%if key == service.category %}
                             {{val}}
                             {% endif %}
                             {% endfor %}
-                        </h3>
+                        </p>
                     </a>
                 </li>
                 {% empty %}

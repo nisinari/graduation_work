@@ -25,6 +25,8 @@ urlpatterns = [
     path('post-delete/<int:pk>/', views.PostDeleteView.as_view(), name="post_delete"),
 
     path('search-result/<int:pk>/', views.SearchResultView.as_view(), name="search_result"),
+    path('post_finish/', views.Post_FinishView.as_view(), name='post_finish'),
+
 
 
     # path('login/', views.CompanyLogInView.as_view(), name="login"),
