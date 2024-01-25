@@ -6,11 +6,11 @@
 {% block active_service_list %}active{% endblock %}
 
 {% block contents %}
-<div class="login wrapper">
-    <div>
+<div class="wrapper">
+    <div class="service_create">
         <form method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
-            <table class="login_input">
+            <table>
                 {{ form.as_table }}
             </table>
             <div class="login_button">

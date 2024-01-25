@@ -6,15 +6,21 @@
 {% block active_service_list %}active{% endblock %}
 
 {% block contents %}
-<div class="container my-div-style">
-    <div class="row">
+<div class="wrapper">
+    <div class="service_create">
         <form method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
             <table class="table">
                 {{ form.as_table }}
             </table>
-            <button class="" type="submit">更新</button>
-            <a class="" href="{% url 'portal:service_detail' object.pk %}">キャンセル</a>
+            <div class="button_flex">
+                <div class="offer_button">
+                    <button type="submit">更新</button>
+                </div>
+                <div class="offer_button">
+                    <a href="{% url 'portal:service_detail' object.pk %}">キャンセル</a>
+                </div>
+            </div>
         </form>
     </div>
 </div>

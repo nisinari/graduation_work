@@ -6,14 +6,16 @@
 {% block active_post_list %}active{% endblock %}
 
 {% block contents %}
-<div>
-    <div>
+<div class="wrapper">
+    <div class="service_create">
         <form method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
-            <table class="table">
+            <table>
                 {{ form.as_table }}
             </table>
-            <button type="submit">作成</button>
+            <div class="login_button">
+                <button type="submit">作成</button>
+            </div>
         </form>
     </div>
 </div>

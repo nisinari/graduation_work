@@ -29,18 +29,22 @@ footer{
 }
 
 .first{
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background-color: #fbd3d3;
 }
-.first first_flex{
+.first .first_flex{
     display: flex;
     justify-content: space-between;
 }
 
-.first first_text{
-    width: 40%;
+.first .first_text{
+    width: 35%;
     font-size: 40px;
+    align-items: center;
+    display: flex;
 }
+
 .first img{
     width: 60%;
 }
@@ -131,6 +135,7 @@ footer{
 }
 .login_button{
     padding: 60px;
+    text-align: center;
 }
 .login_button button{
     font-size: 32px;
@@ -140,6 +145,20 @@ footer{
     padding: 16px 80px;
     border-radius: 40px;
 }
+.cancel_button{
+    display: flex;
+    padding: 60px;
+    text-align: center;
+}
+.cancel_button a{
+    font-size: 32px;
+    color: #fff;
+    border: #000 2px;
+    background-color: #d32e18;
+    padding: 16px 80px;
+    border-radius: 40px;
+}
+
 .entry_title{
     margin: 40px auto;
     font-size: 32px;
@@ -238,13 +257,12 @@ footer{
 }
 .service_detail .service_post_list .service_post_list_price{
     text-align: center;
+    border-bottom: dotted black;
 }
 .service_detail .service_post_list .service_post_list_date{
     text-align: right;
 }
 
-.service_detail {}
-.service_detail{}
 .account_image{
     width: 100%;
 }
@@ -297,9 +315,6 @@ footer{
 .post_detail .post_date p{
     margin-left: 10px;
 }
-.post_detail{}
-.post_detail{}
-.post_detail{}
 
 .post_finish{
     text-align: center;
@@ -322,5 +337,34 @@ footer{
     justify-content: space-around;
 }
 
+.service_create{
+    margin: 60px auto;
+    padding: 40px;
+    width: 100%;
+}
 
+.service_create th{
+    width: 30%;
+    align-items: center;
+    vertical-align: middle;
+    background-color: #fbd3d3;
+    padding: 30px 15px;
+}
 
+.service_create td{
+    width: 70%;
+    padding: 22px 15px 20px 15px;
+    background-color: #d9d9d9;
+}
+.service_create td input{
+    width: 600px;
+    
+}
+.service_create td textarea{
+    width: 600px;
+    resize: none;
+}
+.service_create td select{
+    height: 30px;
+    width: 160px;
+}

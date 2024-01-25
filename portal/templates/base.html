@@ -13,11 +13,11 @@
 <body>
     <header class=" header">
         <div class="header_content wrapper">
-            <h1><a href="{% url 'portal:index' %}">タイトル</a></h1>
+            <h1><a href="{% url 'portal:index' %}">卒業研究  E班</a></h1>
             <ul class="ulflex">
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'portal:service_create' %}">サービス作成</a></li>
-                <li><a href="{% url 'account_logout' %}">Log Out</a></li>
+                <li><a href="{% url 'account_logout' %}">ログアウト</a></li>
                 {% else %}
                 <li><a href="{% url 'member:signup_basic' %}">新規利用者登録</a></li>
                 <li><a href="{% url 'member:signup_business' %}">新規事業者登録</a></li>

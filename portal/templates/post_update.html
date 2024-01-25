@@ -6,15 +6,21 @@
 {% block active_post_list %}active{% endblock %}
 
 {% block contents %}
-<div>
-    <div>
+<div class="wrapper">
+    <div class="service_create">
         <form method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
             <table class="table">
                 {{ form.as_table }}
             </table>
-            <button type="submit">更新</button>
-            <a href="{% url 'portal:post_detail' object.pk %}">キャンセル</a>
+            <div class="button_flex">
+                <div class="login_button">
+                    <button type="submit">更新</button>
+                </div>
+                <div class="cancel_button">
+                    <a href="{% url 'portal:post_detail' object.pk %}">キャンセル</a>
+                </div>
+            </div>
         </form>
     </div>
 </div>

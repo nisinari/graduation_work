@@ -10,9 +10,13 @@
     <div>
         <form method="POST">
             {% csrf_token %}
-            <p>本当に削除しますか？</p>
-            <button type="submit">削除</button>
-            <a href="{% url 'portal:service_detail' object.pk %}">キャンセル</a>
+            <p class="post_finish">本当に削除しますか？</p>
+            <div class="login_button">
+                <button type="submit">削除</button>
+            </div>
+            <div class="cancel_button">
+                <a href="{% url 'portal:service_detail' object.pk %}">キャンセル</a>
+            </div>
         </form>
     </div>
 </div>
