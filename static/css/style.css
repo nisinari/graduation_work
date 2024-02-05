@@ -212,7 +212,7 @@ footer{
     font-size: 24px;
 }
 .service_detail{
-    margin: 80px;
+    margin-top: 80px;
 }
 .service_detail .service_main{
     display: flex;
